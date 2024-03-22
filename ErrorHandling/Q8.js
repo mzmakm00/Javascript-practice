@@ -5,7 +5,7 @@ try {
     {
        throw new TypeError('Invalid data type ! Provide a string or a number') 
     }
-    if(typeof data ===  'string' || data.length === 0)
+    if(typeof data ===  'string' && data.length === 0)
     {
         throw new Error ('Empty String ! it should be filled ')
     }
@@ -24,7 +24,7 @@ try {
 
 
 processData(42);      // Valid number, processed
-processData("hello"); // Valid string, processed
+processData("hello123"); // Valid string, processed
 processData("");       // Empty string, throws Error
 processData(true);    // Invalid type, throws TypeError
 processData(null);     // Unexpected error, re-thrown

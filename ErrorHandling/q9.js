@@ -2,6 +2,7 @@ function decodeURIHandleError(uriString) {
     try {
       const decodedURI = decodeURI(uriString);
       console.log('Decoded URI:', decodedURI);
+      
     } catch (error) {
       if (error instanceof URIError) {
         console.error('Error: Invalid URI format. Please provide a valid URI.');
