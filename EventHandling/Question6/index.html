@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Progress Bar</title>
+<style>
+  .progress-container {
+    width: 100%;
+    background-color: #f1f1f1;
+  }
+
+  .progress-bar {
+    width: 0%;
+    height: 30px;
+    background-color: #4caf50;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-container">
+  <div class="progress-bar" id="myProgressBar">0%</div>
+</div>
+
+<script>
+let progress = 0;
+const totalTasks = 100;
+const progressIncrement = 1;
+
+
+function updateProgressBar() {
+  progress += progressIncrement;
+  const progressBar = document.getElementById('myProgressBar');
+  const percentage = Math.min(100, Math.round(progress / totalTasks * 100));
+  progressBar.style.width = percentage + '%';
+  progressBar.textContent = percentage + '%';
+  
+  if (progress < totalTasks) {
+    setTimeout(updateProgressBar, 10); 
+  }
+}
+
+updateProgressBar();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drag and Drop</title>
+<style>
+  .drag-container {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px;
+  }
+
+  .drag-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .drag-item.drag-over {
+    background-color: #f0f0f0;
+  }
+</style>
+</head>
+<body>
+
+<ul id="dragContainer" class="drag-container">
+  <li class="drag-item" draggable="true">Item 1</li>
+  <li class="drag-item" draggable="true">Item 2</li>
+  <li class="drag-item" draggable="true">Item 3</li>
+  <li class="drag-item" draggable="true">Item 4</li>
+  <li class="drag-item" draggable="true">Item 5</li>
+</ul>
+
+<script src="index.js"></script>
+
+</body>
+</html>
