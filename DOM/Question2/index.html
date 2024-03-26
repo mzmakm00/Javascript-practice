@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Change the content of a cell</title>
+<script>
+function updateCellContent(rowNumber, columnNumber, newContent) {
+    var table = document.getElementById('myTable');
+    if (table) {
+        var rows = table.rows;
+        if (rowNumber >= 0 && rowNumber < rows.length) {
+            var cells = rows[rowNumber].cells;
+            if (columnNumber >= 0 && columnNumber < cells.length) {
+                cells[columnNumber].textContent = newContent;
+                console.log("Cell content updated successfully.");
+            } else {
+                console.error("Invalid column number.");
+            }
+        } else {
+            console.error("Invalid row number.");
+        }
+    } else {
+        console.error("Table not found.");
+    }
+}
+
+function changeContent() {
+    var row = parseInt(prompt("Input the Row number (0, 1, 2)", "0"));
+    var column = parseInt(prompt("Input the Column number (0, 1)", "0"));
+    var content = prompt("Input the Cell content");
+    updateCellContent(row, column, content);
+}
+</script>
+</head>
+<body>
+<table id="myTable" border="1">
+<tr><td>Row1 cell1</td>
+<td>Row1 cell2</td></tr>
+<tr><td>Row2 cell1</td>
+<td>Row2 cell2</td></tr>
+<tr><td>Row3 cell1</td>
+<td>Row3 cell2</td></tr>
+</table>
+<form>
+<input type="button" onclick="changeContent()" value="Change content">
+</form>
+</body>
+</html>
